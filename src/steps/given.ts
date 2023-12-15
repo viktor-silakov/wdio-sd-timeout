@@ -1,3 +1,4 @@
+// import { Given } from '@cucumber/cucumber';
 import { Given } from '@cucumber/cucumber';
 
 import checkContainsAnyText from '../support/check/checkContainsAnyText.js';
@@ -20,6 +21,15 @@ import isEnabled from '../support/check/isEnabled.js';
 import isDisplayed from '../support/check/isDisplayed.js';
 import openWebsite from '../support/action/openWebsite.js';
 import setWindowSize from '../support/action/setWindowSize.js';
+import { browser } from '@wdio/globals';
+
+Given(
+    /^DDD"$/,
+    // eslint-disable-next-line prefer-arrow-callback
+    function test() {
+        browser.debug();
+    }
+);
 
 Given(
     /^I open the (url|site) "([^"]*)?"$/,

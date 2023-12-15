@@ -181,7 +181,7 @@ export const config: WebdriverIO.Config = {
         // <boolean> add cucumber tags to feature or scenario name
         tagsInTitle: false,
         // <number> timeout for step definitions
-        timeout: 20000,
+        timeout: 20,
     } as WebdriverIO.CucumberOpts,
     ...hooks,
 };

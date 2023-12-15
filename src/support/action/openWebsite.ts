@@ -1,3 +1,5 @@
+import { browser } from '@wdio/globals';
+
 /**
  * Open the given URL
  * @param  {String}   type Type of navigation (getUrl or site)

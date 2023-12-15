@@ -1,4 +1,4 @@
-import { When } from '@cucumber/cucumber';
+import { When, setDefaultTimeout, Before } from '@cucumber/cucumber';
 
 import clearInputField from '../support/action/clearInputField.js';
 import clickElement from '../support/action/clickElement.js';
@@ -17,6 +17,9 @@ import setCookie from '../support/action/setCookie.js';
 import setInputField from '../support/action/setInputField.js';
 import setPromptText from '../support/action/setPromptText.js';
 import switchIFrame from '../support/action/switchIFrame.js';
+import { browser } from '@wdio/globals';
+// import { Before } from '@wdio/cucumber-framework';
+
 
 When(
     /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
@@ -102,3 +105,7 @@ When(
     /^I switch to the iframe "([^"]*)?"$/,
     switchIFrame
 );
+
+When(/^I debug$/, { timeout: 1000000 }, async function () {
+    await browser.pause(1000);
+});
